@@ -7,7 +7,17 @@ phases:
 
   pre_build:
     commands:
-      - printenv > .env
+      - echo "Setting environment variables"
+      - export SERVER_PORT=${SERVER_PORT}
+      - export DATABASE_HOST=${DATABASE_HOST}
+      - export DATABASE_PORT=${DATABASE_PORT}
+      - export DB=${DB}
+      - export DATABASE_USERNAME=${DATABASE_USERNAME}
+      - export DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - export BUCKET_NAME=${BUCKET_NAME}
+      - export REGION=${REGION}
+      - export ACCESS_KEY=${ACCESS_KEY}
+      - export SECRET_KEY=${SECRET_KEY}
       - echo "Granting execute permission to gradlew"
       - chmod +x gradlew
 
