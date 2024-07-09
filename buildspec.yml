@@ -23,7 +23,10 @@ phases:
 
   build:
     commands:
+      - echo "Building the project"
       - ./gradlew build
+      - echo "Moving the built jar file"
+      - ls build/libs
       - mv build/libs/*.jar app.jar
 
 artifacts:
