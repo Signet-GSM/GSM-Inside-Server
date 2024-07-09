@@ -6,6 +6,7 @@ phases:
 
   pre_build:
     commands:
+      - printenv > .env
       - echo "Granting execute permission to gradlew"
       - chmod +x gradlew
 
