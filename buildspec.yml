@@ -4,11 +4,16 @@ phases:
     runtime-versions:
       java: corretto11
 
+  pre_build:
+    commands:
+      - echo "Granting execute permission to gradlew"
+      - chmod +x gradlew
+
   build:
     commands:
       - ./gradlew build
       - mv build/libs/*.jar app.jar
-      -
+
 artifacts:
   files:
     - app.jar
